@@ -1,1 +1,10 @@
 .tunes
+  %button#green
+  %button#blue
+  %button#red
+
+:javascript
+
+  $('button').click(function() {
+    $.ajax('/mqtt/publish', {data: {payload: $(this).attr('id').toUpperCase()}})
+  });

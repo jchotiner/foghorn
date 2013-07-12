@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @event.name
+%p
+  %b Yaml:
+  - @event.schedule.first.events.each do |e|
+    .event
+      = e.start_time
+      = e.finish_time
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path

@@ -9,11 +9,12 @@ class MqttController < ApplicationController
     password: uri.password,
     }
     MQTT::Client.connect(conn_opts) do |c|
-      c.publish(params[:topic], params[:payload])
+      c.publish(params[:topic] || 'test', params[:payload])
     end
   end
 
   def home
+    render layout: 'home'
   end
 
 end
