@@ -1,4 +1,6 @@
 Foghorn::Application.routes.draw do
+   get 'mqtt/publish' => 'mqtt#publish'
+   root 'mqtt#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +41,7 @@ Foghorn::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
